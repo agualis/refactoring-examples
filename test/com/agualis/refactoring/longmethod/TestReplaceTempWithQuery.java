@@ -1,4 +1,4 @@
-package com.agualis.refactoring.bloated;
+package com.agualis.refactoring.longmethod;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;

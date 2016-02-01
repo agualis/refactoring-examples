@@ -1,4 +1,4 @@
-package com.agualis.refactoring.bloated;
+package com.agualis.refactoring.longmethod;
 
 public class Plan {
     int planValue = 0;

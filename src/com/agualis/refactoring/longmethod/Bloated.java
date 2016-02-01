@@ -1,6 +1,5 @@
-package com.agualis.refactoring.bloated;
+package com.agualis.refactoring.longmethod;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 public class Bloated {
