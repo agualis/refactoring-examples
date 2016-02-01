@@ -1,9 +1,18 @@
 package com.agualis.refactoring.bloated;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 public class Bloated {
 
+    private static final Date SUMMER_START = new Date(2014, 3, 21);
+    private static final Date SUMMER_END = new Date(2014, 7, 15);
+    private double charge;
     int quantity = 2;
     int itemPrice = 23;
+    private int winterRate = 2;
+    private int winterServiceCharge = 4;
+    private int summerRate = 3;
 
     protected double calculateTotal() {
         int basePrice = quantity * itemPrice;
@@ -14,7 +23,6 @@ public class Bloated {
             return basePrice * 0.98;
         }
     }
-
 
     protected boolean isWithinRange(Plan plan) {
         int low = daysTempRange().getLow();
@@ -27,4 +35,13 @@ public class Bloated {
         return new TempRange(2, 10);
     }
 
+
+    protected double calculateCharge(Date date) {
+        if (date.before(SUMMER_START) || date.after(SUMMER_END)) {
+            charge = quantity * winterRate + winterServiceCharge;
+        } else {
+            charge = quantity * summerRate;
+        }
+        return charge;
+    }
 }
