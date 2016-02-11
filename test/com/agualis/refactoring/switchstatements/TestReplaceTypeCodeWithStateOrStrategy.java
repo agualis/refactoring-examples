@@ -10,6 +10,7 @@ public class TestReplaceTypeCodeWithStateOrStrategy {
     @Test public void
     test() {
         DynamicEmployee theDude = new DynamicEmployee(StaticEmployee.SALESMAN);
+
         assertThat(theDude.payAmount(), is(57));
 
         theDude.promoteToManager();
