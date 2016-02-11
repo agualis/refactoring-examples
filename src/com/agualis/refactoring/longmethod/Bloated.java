@@ -1,11 +1,14 @@
 package com.agualis.refactoring.longmethod;
 
-import java.util.Date;
+import org.joda.time.LocalDate;
+
+import static com.agualis.refactoring.utils.JodaUtils.july;
+import static com.agualis.refactoring.utils.JodaUtils.march;
 
 public class Bloated {
 
-    private static final Date SUMMER_START = new Date(2014, 3, 21);
-    private static final Date SUMMER_END = new Date(2014, 7, 15);
+    private static final LocalDate SUMMER_START = march(21, 2014);
+    private static final LocalDate SUMMER_END = july(15, 2014);
     private double charge;
     int quantity = 2;
     int itemPrice = 23;
@@ -35,8 +38,8 @@ public class Bloated {
     }
 
 
-    protected double calculateCharge(Date date) {
-        if (date.before(SUMMER_START) || date.after(SUMMER_END)) {
+    protected double calculateCharge(LocalDate date) {
+        if (date.isBefore(SUMMER_START) || date.isAfter(SUMMER_END)) {
             charge = quantity * winterRate + winterServiceCharge;
         } else {
             charge = quantity * summerRate;

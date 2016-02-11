@@ -6,14 +6,15 @@ import org.junit.Test;
 
 import java.util.Vector;
 
-import static com.agualis.refactoring.utils.JodaUtils.spanishDate;
+import static com.agualis.refactoring.utils.JodaUtils.april;
+import static com.agualis.refactoring.utils.JodaUtils.september;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class TestIntroduceParameterObject {
 
-    private static final LocalDate FIRST_CHARGE_DATE = spanishDate("03-04-214");
-    private static final LocalDate SECOND_CHARGE_DATE = spanishDate("15-04-2014");
+    private static final LocalDate FIRST_CHARGE_DATE = april(3, 2014);
+    private static final LocalDate SECOND_CHARGE_DATE = april(15, 2014);
     public static final int FIRST_CHARGE_AMOUNT = 14;
     public static final int SECOND_CHARGE_AMOUNT = 23;
 
@@ -25,7 +26,7 @@ public class TestIntroduceParameterObject {
 
         Account account = new Account(entries);
 
-        assertThat(account.getFlowBetween(spanishDate("03-04-214"), spanishDate("10-9-2014")), is(new Double(FIRST_CHARGE_AMOUNT + SECOND_CHARGE_AMOUNT)));
-        assertThat(account.getFlowBetween(spanishDate("5-4-2015"), spanishDate("10-4-2015")), is(0.0));
+        assertThat(account.getFlowBetween(april(3,2014) , september(10, 2014)), is(new Double(FIRST_CHARGE_AMOUNT + SECOND_CHARGE_AMOUNT)));
+        assertThat(account.getFlowBetween(april(5, 2015), april(10, 2015)), is(0.0));
     }
 }
