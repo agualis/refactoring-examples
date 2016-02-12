@@ -43,11 +43,11 @@ public class TestEncapsulateCollection {
 
     @Test public void
     test_counting_advanced_courses() {
-        int advancedCorusesCount = 0;
+        int advancedCoursesCount = 0;
         for(Course course : manolo.getCourses()) {
-            if (course.isAdvanced()) advancedCorusesCount ++;
+            if (course.isAdvanced()) advancedCoursesCount ++;
         }
-        assertThat(advancedCorusesCount, is(1));
+        assertThat(advancedCoursesCount, is(1));
     }
 
 
