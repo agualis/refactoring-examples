@@ -14,15 +14,17 @@ import static org.mockito.Mockito.verify;
 @RunWith(MockitoJUnitRunner.class)
 public class CommandPatternReferenceTest {
 
-    Command anyCommand;
-    Command concreteCommandA;
+    ConcreteCommandA concreteCommandA;
     Receiver receiver;
-    public static final Receiver NOT_USED = null;
+
+    @Before
+    public void client(){
+        receiver = mock(Receiver.class);
+        concreteCommandA = new ConcreteCommandA(receiver);
+    }
 
     @Test public void
     concreteCommandIsACommand() {
-
-        ConcreteCommandA concreteCommandA = new ConcreteCommandA(NOT_USED);
         ConcreteCommandB concreteCommandB = new ConcreteCommandB();
 
         assertThat(concreteCommandA instanceof Command, is(true));
@@ -30,34 +32,14 @@ public class CommandPatternReferenceTest {
     }
 
     @Test public void
-    executingACommandPerformsReceiverSAction() {
+    executingACommandPerformsReceiversAction() {
 
-        new Client().init();
-
-        new Invoker().load(anyCommand).invoke();
+        invoker();
 
         verify(receiver).action();
     }
 
-    private class Invoker {
-
-        Command command;
-
-        public Invoker load(Command command) {
-            this.command = command;
-            return this;
-        }
-
-        public void invoke() {
-            command.execute();
-        }
-    }
-
-    private class Client {
-
-        public void init(){
-            receiver = mock(Receiver.class);
-            anyCommand = new ConcreteCommandA(receiver);
-        }
+    private void invoker() {
+        concreteCommandA.execute();
     }
 }
