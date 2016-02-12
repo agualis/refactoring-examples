@@ -5,7 +5,8 @@ public class DynamicEmployee {
     private int commission = 32;
     private int bonus = 44;
 
-    private int type;
+    private int type; //NOTE TYPE IS NOT FINAL --> MUTABLE
+
     static final int ENGINEER = 0;
     static final int SALESMAN = 1;
     static final int MANAGER = 2;

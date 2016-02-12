@@ -5,7 +5,7 @@ public class StaticEmployee {
     private int commission = 32;
     private int bonus = 44;
 
-    private final int type;
+    private final int type; //NOTE TYPE IS FINAL --> INMUTABLE
     static final int ENGINEER = 0;
     static final int SALESMAN = 1;
     static final int MANAGER = 2;
