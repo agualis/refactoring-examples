@@ -12,7 +12,7 @@ public class TestExtractClass {
 
     @Test public void
     test() {
-        assertThat(new Person("Fowler", AN_OFFICE_AREA_CODE, AN_OFFICE_NUMBER).getOffincePhoneNumber(),
+        assertThat(new Person("Fowler", AN_OFFICE_AREA_CODE, AN_OFFICE_NUMBER).getOfficePhoneNumber(),
                 is(AN_OFFICE_AREA_CODE + AN_OFFICE_NUMBER));
     }
 }
