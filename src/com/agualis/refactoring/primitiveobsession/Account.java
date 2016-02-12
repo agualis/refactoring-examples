@@ -7,6 +7,8 @@ import java.util.Vector;
 
 public class Account {
 
+    private Vector entries = new Vector();
+
     public Account(Vector entries) {
         this.entries = entries;
     }
@@ -25,7 +27,5 @@ public class Account {
         }
         return result;
     }
-
-    private Vector entries = new Vector();
 
 }
