@@ -12,9 +12,11 @@ public class Person {
     public String getName() {
         return name;
     }
+
     public String getTelephoneNumber(){
         return officeTelephone.getTelephoneNumber();
     }
+
     TelephoneNumber getOfficeTelephone() {
         return officeTelephone;
     }

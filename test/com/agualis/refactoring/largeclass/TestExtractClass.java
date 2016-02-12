@@ -1,6 +1,5 @@
 package com.agualis.refactoring.largeclass;
 
-import com.agualis.refactoring.largeclass.Person;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -13,6 +12,7 @@ public class TestExtractClass {
 
     @Test public void
     test() {
-        assertThat(new Person("Gualis", AN_OFFICE_AREA_CODE, AN_OFFICE_NUMBER).getTelephoneNumber(), is(AN_OFFICE_AREA_CODE + AN_OFFICE_NUMBER));
+        assertThat(new Person("Fowler", AN_OFFICE_AREA_CODE, AN_OFFICE_NUMBER).getOffincePhoneNumber(),
+                is(AN_OFFICE_AREA_CODE + AN_OFFICE_NUMBER));
     }
 }

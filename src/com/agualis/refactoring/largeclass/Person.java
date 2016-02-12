@@ -11,7 +11,7 @@ public class Person {
         this.officeNumber = officeNumber;
     }
 
-    public String getTelephoneNumber() {
+    public String getOffincePhoneNumber() {
         return officeAreaCode + officeNumber;
     }
 }
