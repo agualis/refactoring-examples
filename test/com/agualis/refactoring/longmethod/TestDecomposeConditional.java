@@ -12,8 +12,8 @@ public class TestDecomposeConditional {
     @Test public void
     test() {
 
-        assertThat(new Bloated().calculateCharge(june(5, 2014)), is(6.0));
-        assertThat(new Bloated().calculateCharge(october(5, 2014)), is(8.0));
+        assertThat(new WTF().calculateCharge(june(5, 2014)), is(6.0));
+        assertThat(new WTF().calculateCharge(october(5, 2014)), is(8.0));
     }
 
 }

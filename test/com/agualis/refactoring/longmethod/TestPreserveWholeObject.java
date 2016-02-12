@@ -10,9 +10,9 @@ public class TestPreserveWholeObject {
     @Test
     public void
     test() {
-        Bloated bloatedSmells = new Bloated();
-        assertThat(bloatedSmells.isWithinRange(new Plan(8)), is(true));
-        assertThat(bloatedSmells.isWithinRange(new Plan(25)), is(false));
+        WTF wtf = new WTF();
+        assertThat(wtf.isWithinRange(new Plan(8)), is(true));
+        assertThat(wtf.isWithinRange(new Plan(25)), is(false));
     }
 
 

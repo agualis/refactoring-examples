@@ -7,7 +7,7 @@ public class TestReplaceTempWithQuery {
 
     @org.junit.Test public void
     test() {
-        assertThat(new Bloated().calculateTotal(), is(45.08));
+        assertThat(new WTF().calculateTotal(), is(45.08));
     }
 
 

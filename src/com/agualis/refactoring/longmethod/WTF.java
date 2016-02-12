@@ -5,7 +5,7 @@ import org.joda.time.LocalDate;
 import static com.agualis.refactoring.utils.JodaUtils.july;
 import static com.agualis.refactoring.utils.JodaUtils.march;
 
-public class Bloated {
+public class WTF {
 
     private static final LocalDate SUMMER_START = march(21, 2014);
     private static final LocalDate SUMMER_END = july(15, 2014);
