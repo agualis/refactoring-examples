@@ -15,12 +15,8 @@ public class DynamicEmployee {
         this.type = type;
     }
 
-    public int getType() {
-        return type;
-    }
-
     public int payAmount() {
-        switch (getType()) {
+        switch (type) {
             case ENGINEER:
                 return monthlySalary;
             case SALESMAN:
