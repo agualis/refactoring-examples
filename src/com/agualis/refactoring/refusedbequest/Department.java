@@ -11,6 +11,7 @@ public class Department {
     public Department (String name) {
         this.name = name;
     }
+
     public int getTotalAnnualCost(){
         Enumeration e = getStaff();
         int result = 0;
@@ -20,12 +21,15 @@ public class Department {
         }
         return result;
     }
+
     public int getHeadCount() {
         return staff.size();
     }
+
     public Enumeration getStaff() {
         return staff.elements();
     }
+
     public void addStaff(Employee arg) {
         staff.addElement(arg);
     }

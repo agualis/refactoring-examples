@@ -43,6 +43,7 @@ public class TestEncapsulateCollection {
 
     @Test public void
     test_counting_advanced_courses() {
+
         int advancedCoursesCount = 0;
         for(Course course : manolo.getCourses()) {
             if (course.isAdvanced()) advancedCoursesCount ++;
