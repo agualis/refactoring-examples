@@ -24,9 +24,11 @@ public class TestIntroduceParameterObject {
         entries.add(new Entry(FIRST_CHARGE_AMOUNT, FIRST_CHARGE_DATE));
         entries.add(new Entry(SECOND_CHARGE_AMOUNT, SECOND_CHARGE_DATE));
 
+
+        final double EXPECTED_FLOW = FIRST_CHARGE_AMOUNT + SECOND_CHARGE_AMOUNT;
         Account account = new Account(entries);
 
-        assertThat(account.getFlowBetween(april(3,2014) , september(10, 2014)), is(new Double(FIRST_CHARGE_AMOUNT + SECOND_CHARGE_AMOUNT)));
+        assertThat(account.getFlowBetween(april(3,2014) , september(10, 2014)), is(EXPECTED_FLOW));
         assertThat(account.getFlowBetween(april(5, 2015), april(10, 2015)), is(0.0));
     }
 }

@@ -19,14 +19,14 @@ public class TestExtractMethod {
     @Test public void
     test() {
         OwingPrinter owingPrinterSpy = spy(new OwingPrinter(A_NAME));
+
         owingPrinterSpy.printOwing(orders());
-        double totalAmount = ORDER1_AMOUNT + ORDER2_AMOUNT + ORDER3_AMOUNT;
 
         InOrder inOrder = inOrder(owingPrinterSpy);
-
         inOrder.verify(owingPrinterSpy).printLine("**************************");
         inOrder.verify(owingPrinterSpy).printLine("***** Customer Owes ******");
         inOrder.verify(owingPrinterSpy).printLine("**************************");
+        double totalAmount = ORDER1_AMOUNT + ORDER2_AMOUNT + ORDER3_AMOUNT;
         inOrder.verify(owingPrinterSpy).printLine("amount: " + totalAmount);
     }
 

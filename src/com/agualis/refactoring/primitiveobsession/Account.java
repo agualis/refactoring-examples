@@ -18,10 +18,7 @@ public class Account {
         Enumeration e = entries.elements();
         while (e.hasMoreElements()) {
             Entry each = (Entry) e.nextElement();
-            if (each.getDate().equals(start) ||
-                    each.getDate().equals(end) ||
-                    (each.getDate().isAfter(start) &&
-                            each.getDate().isBefore(end))) {
+            if (each.getDate().equals(start) || each.getDate().equals(end) || (each.getDate().isAfter(start) && each.getDate().isBefore(end))) {
                 result += each.getValue();
             }
         }
