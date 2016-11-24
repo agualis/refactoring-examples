@@ -10,10 +10,10 @@ public class TestHideDelegateAndRemoveMiddleMan {
     @Test public void
     test() {
 
-        Person barcenas = new Person();
-        Person rajoy = new Person();
-        barcenas.setDepartment(new Department(rajoy));
+        Person alberto = new Person();
+        Person cristina = new Person();
+        alberto.setDepartment(new Department(cristina));
 
-        assertThat(barcenas.getDepartment().getManager(), is(rajoy));
+        assertThat(alberto.getDepartment().getManager(), is(cristina));
     }
 }
